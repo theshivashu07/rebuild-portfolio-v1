@@ -268,7 +268,7 @@ align-items: center;
 column-gap: clamp(55px, 8vw, 115px);
 /* margin-top: clamp(105px, 14vh, 145px); */
 /* padding-bottom: 2rem; */
-height: 100vh;
+min-height: 100vh;
 }
 
 .intro-copy {

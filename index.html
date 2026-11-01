@@ -26,6 +26,7 @@
 
     <!-- tailwinds css -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://tailwindcss.com"></script>
 
     <link href="styles/style.css" rel="stylesheet" />
     <link href="styles/style-slim-scrollbar.css" rel="stylesheet" />
@@ -56,11 +57,23 @@
       </a>
 
       <nav class="header-links" aria-label="Main navigation">
-        <!-- <a href="#about">About</a> -->
-        <a href="#resume">Resume <i class="bi bi-download" aria-hidden="true"></i></a>
-        <!-- ... -->
+        <!-- <a class="lg:block" href="#about">About</a> -->
+        <!-- <a class="lg:block" href="#resume">Resume <i class="bi bi-download" aria-hidden="true"></i></a> -->
+        <!-- <span class="lg:block">...</span> -->
 
-        <div class="relative flex items-center justify-center">
+        <!-- <a class="hidden [@media(min-width:580px)]:inline-block" href="#about">About</a> -->
+        <!-- <a class="hidden [@media(min-width:440px)]:inline-block" href="#resume">Resume <i class="bi bi-download" aria-hidden="true"></i></a> -->
+        <!-- <span class="hidden [@media(min-width:500px)]:inline-block">...</span> -->
+
+        <a class="hidden [@media(min-width:520px)]:inline-block" href="#about">About</a>
+        <a class="hidden [@media(min-width:410px)]:inline-block" href="#resume">Resume <i class="bi bi-download" aria-hidden="true"></i></a>
+        <span class="hidden [@media(min-width:450px)]:inline-block">...</span>
+
+
+  <!-- <div class="relative flex items-center justify-center   hidden [@media(min-width:450px)]:inline-block"> -->
+    <!-- <div class="max-[450px]:hidden flex relative items-center justify-center"> -->
+  <!-- <div class="max-[450px]:hidden flex relative items-center justify-center"> -->
+        <div class="relative flex items-center justify-center   hidden [@media(min-width:280px)]:inline-block">
           <button id="music-box" onclick="toggleMusic()" class="relative w-20 h-10 rounded-full flex items-center justify-center bg-light text-[var(--accent)] transition-all duration-300 border-1 border-[var(--accent)] focus:outline-none">
             <i class="bi bi-earbuds [var(--accent)]" style="height: 25px;"></i>
 
@@ -107,7 +120,7 @@
 
           <div class="contact-row" id="contact">
             <span class="contact-label">Connect with me</span>
-            <i class="bi bi-arrow-right contact-arrow" aria-hidden="true"></i>
+            <i class="bi bi-arrow-right contact-arrow text-sm" aria-hidden="true"></i>
             <a class="contact-link" href="mailto:shivamshukla3108@gmail.com">shivamshukla3108@gmail.com</a>
           </div>
         </div>
