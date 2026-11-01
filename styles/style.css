@@ -19,7 +19,7 @@ min-height: 100vh;
 margin: 0;
 background: var(--page-bg);
 color: var(--ink);
-font-family: "Inter";
+font-family: "Redaction","Inter";
 font-weight: 300;
 }
 
@@ -273,7 +273,8 @@ height: 100vh;
 
 .intro-copy {
 max-width: 690px;
-color: #202020;
+/* color: #202020; */
+color: #4b4b4b;
 font-size: clamp(17px, 1.5vw, 18px);
 line-height: 1.42;
 }
