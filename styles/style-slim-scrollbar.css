@@ -1,0 +1,70 @@
+
+
+
+
+
+  /* =========================================
+  GLOBAL CUSTOM SLIM SCROLLBAR
+  ========================================= */
+
+  :root {
+  --page-bg: #f3f5f3;
+  --ink: #050505;
+  --muted: #343b42;
+  --accent: #e06536;
+  --header-height: 70px;
+
+  --scrollbar-size: 6px;
+  /* --scrollbar-thumb: rgba(224, 101, 54, 0.28); */
+  --scrollbar-thumb: #e0653688;
+  --scrollbar-thumb-hover: var(--accent);
+  --scrollbar-track: transparent;
+  }
+
+  /* Firefox */
+  html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+  }
+
+  /* Chrome, Edge, Safari */
+  ::-webkit-scrollbar {
+  width: var(--scrollbar-size);
+  height: var(--scrollbar-size);
+  }
+
+  ::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+  }
+
+  ::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb);
+  border-radius: 20px;
+  border: 1px solid transparent;
+  background-clip: content-box;
+
+  transition: background-color 200ms ease;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+  background-color: var(--scrollbar-thumb-hover);
+  }
+
+  ::-webkit-scrollbar-thumb:active {
+  background-color: var(--accent);
+  }
+
+  /* Horizontal scrollbar */
+  ::-webkit-scrollbar-corner {
+  background: transparent;
+  }
+
+  /* Selection-independent, subtle scrollbar appearance */
+  html {
+  overflow-y: auto;
+  scrollbar-gutter: stable;
+  }
+
+
+
+  

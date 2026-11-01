@@ -1,0 +1,267 @@
+/* 1. ब्राउज़र को बताएं कि यह वेरिएबल एक 'कलर' है (इससे जंपिंग बंद हो जाएगी) */
+@property --shadow-color {
+syntax: '<color>';
+  initial-value: rgba(0, 0, 0, 0);
+  inherits: false;
+  }
+
+  /* बटन पर बेस ट्रांजिशन लगाएं */
+  #music-box {
+  transition: background-color 0.5s ease, box-shadow 0.5s ease, border-color 0.5s ease;
+  }
+
+  /* जब गाना प्ले होगा तब यह पल्स और कलर चेंज एनीमेशन ट्रिगर होगा */
+  .music-playing {
+  animation: djGlowEffect 30s linear infinite;
+  border-color: rgba(255, 255, 255, 0.4) !important;
+  }
+
+  /* डीजे वाइब: अब शैडो का कलर बिना किसी जंप के धीरे-धीरे मिक्स होकर बदलेगा */
+
+  @keyframes djGlowEffect {
+  /* 0% और 100% बिल्कुल सेम रहेंगे ताकि लूप टूटे नहीं */
+  0%, 100% {
+  background-color: #ef4444; /* Pure Red */
+  --shadow-color: rgba(239, 68, 68, 0.65);
+  --icon-color: #b91c1c;
+  box-shadow: 0 0 35px 12px var(--shadow-color), 0 0 75px 25px rgba(239, 68, 68, 0.35);
+  }
+  5% {
+  background-color: #f97316; /* Orange Red */
+  --shadow-color: rgba(249, 115, 22, 0.65);
+  --icon-color: #c2410c;
+  box-shadow: 0 0 38px 13px var(--shadow-color), 0 0 79px 27px rgba(249, 115, 22, 0.35);
+  }
+  10% {
+  background-color: #eab308; /* Yellow Orange */
+  --shadow-color: rgba(234, 179, 8, 0.65);
+  --icon-color: #a16207;
+  box-shadow: 0 0 41px 14px var(--shadow-color), 0 0 83px 29px rgba(234, 179, 8, 0.35);
+  }
+  15% {
+  background-color: #ca8a04; /* Yellow */
+  --shadow-color: rgba(202, 138, 4, 0.65);
+  --icon-color: #854d0e;
+  box-shadow: 0 0 44px 15px var(--shadow-color), 0 0 87px 31px rgba(202, 138, 4, 0.35);
+  }
+  20% {
+  background-color: #84cc16; /* Lime Green */
+  --shadow-color: rgba(132, 204, 22, 0.65);
+  --icon-color: #4d7c0f;
+  box-shadow: 0 0 47px 16px var(--shadow-color), 0 0 91px 33px rgba(132, 204, 22, 0.35);
+  }
+  25% {
+  background-color: #10b981; /* Pure Green */
+  --shadow-color: rgba(16, 185, 129, 0.7);
+  --icon-color: #047857;
+  box-shadow: 0 0 50px 18px var(--shadow-color), 0 0 95px 35px rgba(16, 185, 129, 0.4);
+  }
+  30% {
+  background-color: #059669; /* Emerald Green */
+  --shadow-color: rgba(5, 150, 105, 0.7);
+  --icon-color: #065f46;
+  box-shadow: 0 0 47px 17px var(--shadow-color), 0 0 91px 33px rgba(5, 150, 105, 0.4);
+  }
+  35% {
+  background-color: #0d9488; /* Teal */
+  --shadow-color: rgba(13, 148, 136, 0.7);
+  --icon-color: #115e59;
+  box-shadow: 0 0 44px 16px var(--shadow-color), 0 0 87px 31px rgba(13, 148, 136, 0.4);
+  }
+  40% {
+  background-color: #0ea5e9; /* Light Blue / Sky */
+  --shadow-color: rgba(14, 165, 233, 0.7);
+  --icon-color: #0369a1;
+  box-shadow: 0 0 41px 15px var(--shadow-color), 0 0 83px 29px rgba(14, 165, 233, 0.4);
+  }
+  45% {
+  background-color: #2563eb; /* Royal Blue */
+  --shadow-color: rgba(37, 99, 235, 0.7);
+  --icon-color: #1d4ed8;
+  box-shadow: 0 0 38px 14px var(--shadow-color), 0 0 79px 27px rgba(37, 99, 235, 0.4);
+  }
+  50% {
+  background-color: #3b82f6; /* Pure Blue */
+  --shadow-color: rgba(59, 130, 246, 0.65);
+  --icon-color: #1e40af;
+  box-shadow: 0 0 35px 12px var(--shadow-color), 0 0 75px 25px rgba(59, 130, 246, 0.35);
+  }
+  55% {
+  background-color: #4f46e5; /* Indigo */
+  --shadow-color: rgba(79, 70, 229, 0.65);
+  --icon-color: #3730a3;
+  box-shadow: 0 0 38px 13px var(--shadow-color), 0 0 79px 27px rgba(79, 70, 229, 0.35);
+  }
+  60% {
+  background-color: #6366f1; /* Light Indigo */
+  --shadow-color: rgba(99, 102, 241, 0.65);
+  --icon-color: #4338ca;
+  box-shadow: 0 0 41px 14px var(--shadow-color), 0 0 83px 29px rgba(99, 102, 241, 0.35);
+  }
+  65% {
+  background-color: #7c3aed; /* Violet */
+  --shadow-color: rgba(124, 58, 237, 0.65);
+  --icon-color: #5b21b6;
+  box-shadow: 0 0 44px 15px var(--shadow-color), 0 0 87px 31px rgba(124, 58, 237, 0.35);
+  }
+  70% {
+  background-color: #8b5cf6; /* Pure Purple */
+  --shadow-color: rgba(139, 92, 246, 0.7);
+  --icon-color: #6d28d9;
+  box-shadow: 0 0 47px 16px var(--shadow-color), 0 0 91px 33px rgba(139, 92, 246, 0.4);
+  }
+  75% {
+  background-color: #a855f7; /* Purple Magenta */
+  --shadow-color: rgba(168, 85, 247, 0.7);
+  --icon-color: #7e22ce;
+  box-shadow: 0 0 50px 18px var(--shadow-color), 0 0 95px 35px rgba(168, 85, 247, 0.4);
+  }
+  80% {
+  background-color: #d946ef; /* Fuchsia */
+  --shadow-color: rgba(217, 70, 239, 0.7);
+  --icon-color: #a21caf;
+  box-shadow: 0 0 47px 17px var(--shadow-color), 0 0 91px 33px rgba(217, 70, 239, 0.4);
+  }
+  85% {
+  background-color: #db2777; /* Deep Pink */
+  --shadow-color: rgba(219, 39, 119, 0.7);
+  --icon-color: #9d174d;
+  box-shadow: 0 0 44px 16px var(--shadow-color), 0 0 87px 31px rgba(219, 39, 119, 0.4);
+  }
+  90% {
+  background-color: #ec4899; /* Pink */
+  --shadow-color: rgba(236, 72, 153, 0.7);
+  --icon-color: #be185d;
+  box-shadow: 0 0 41px 15px var(--shadow-color), 0 0 83px 29px rgba(236, 72, 153, 0.4);
+  }
+  95% {
+  background-color: #f43f5e; /* Rose Red */
+  --shadow-color: rgba(244, 63, 94, 0.7);
+  --icon-color: #e11d48;
+  box-shadow: 0 0 38px 14px var(--shadow-color), 0 0 79px 27px rgba(244, 63, 94, 0.4);
+  }
+  }
+
+  @keyframes djGlowEffect {
+  /* 0% और 100% बिल्कुल एक समान ब्राइट रेड ताकि लूप न टूटे */
+  0%, 100% {
+  background-color: #ff0000; /* Pure Neon Red */
+  --shadow-color: rgba(255, 0, 0, 0.7);
+  --icon-color: #ff3333;
+  box-shadow: 0 0 35px 12px var(--shadow-color), 0 0 75px 25px rgba(255, 0, 0, 0.4);
+  }
+  5% {
+  background-color: #ff4500; /* Bright Orange Red */
+  --shadow-color: rgba(255, 69, 0, 0.7);
+  --icon-color: #ff6633;
+  box-shadow: 0 0 38px 13px var(--shadow-color), 0 0 79px 27px rgba(255, 69, 0, 0.4);
+  }
+  10% {
+  background-color: #ff8c00; /* Neon Dark Orange */
+  --shadow-color: rgba(255, 140, 0, 0.7);
+  --icon-color: #ffa633;
+  box-shadow: 0 0 41px 14px var(--shadow-color), 0 0 83px 29px rgba(255, 140, 0, 0.4);
+  }
+  15% {
+  background-color: #ffa500; /* Bright Orange */
+  --shadow-color: rgba(255, 165, 0, 0.7);
+  --icon-color: #ffbb33;
+  box-shadow: 0 0 44px 15px var(--shadow-color), 0 0 87px 31px rgba(255, 165, 0, 0.4);
+  }
+  20% {
+  background-color: #ffd700; /* Neon Gold/Yellow */
+  --shadow-color: rgba(255, 215, 0, 0.7);
+  --icon-color: #ffe133;
+  box-shadow: 0 0 47px 16px var(--shadow-color), 0 0 91px 33px rgba(255, 215, 0, 0.4);
+  }
+  25% {
+  background-color: #adff2f; /* Neon Green Yellow */
+  --shadow-color: rgba(173, 255, 47, 0.75);
+  --icon-color: #bdff5a;
+  box-shadow: 0 0 50px 18px var(--shadow-color), 0 0 95px 35px rgba(173, 255, 47, 0.45);
+  }
+  30% {
+  background-color: #7fff00; /* Neon Lime Green */
+  --shadow-color: rgba(127, 255, 0, 0.75);
+  --icon-color: #99ff33;
+  box-shadow: 0 0 47px 17px var(--shadow-color), 0 0 91px 33px rgba(127, 255, 0, 0.45);
+  }
+  35% {
+  background-color: #00ff00; /* Pure Neon Green */
+  --shadow-color: rgba(0, 255, 0, 0.75);
+  --icon-color: #33ff33;
+  box-shadow: 0 0 44px 16px var(--shadow-color), 0 0 87px 31px rgba(0, 255, 0, 0.45);
+  }
+  40% {
+  background-color: #00ff7f; /* Neon Spring Green */
+  --shadow-color: rgba(0, 255, 127, 0.75);
+  --icon-color: #33ff99;
+  box-shadow: 0 0 41px 15px var(--shadow-color), 0 0 83px 29px rgba(0, 255, 127, 0.45);
+  }
+  45% {
+  background-color: #00ffff; /* Pure Cyan / Electric Blue */
+  --shadow-color: rgba(0, 255, 255, 0.75);
+  --icon-color: #33ffff;
+  box-shadow: 0 0 38px 14px var(--shadow-color), 0 0 79px 27px rgba(0, 255, 255, 0.45);
+  }
+  50% {
+  background-color: #00bfff; /* Deep Sky Blue */
+  --shadow-color: rgba(0, 191, 255, 0.7);
+  --icon-color: #33ccff;
+  box-shadow: 0 0 35px 12px var(--shadow-color), 0 0 75px 25px rgba(0, 191, 255, 0.4);
+  }
+  55% {
+  background-color: #1e90ff; /* Bright Dodger Blue */
+  --shadow-color: rgba(30, 144, 255, 0.7);
+  --icon-color: #4da6ff;
+  box-shadow: 0 0 38px 13px var(--shadow-color), 0 0 79px 27px rgba(30, 144, 255, 0.4);
+  }
+  60% {
+  background-color: #0000ff; /* Pure Electric Blue */
+  --shadow-color: rgba(0, 0, 255, 0.7);
+  --icon-color: #3333ff;
+  box-shadow: 0 0 41px 14px var(--shadow-color), 0 0 83px 29px rgba(0, 0, 255, 0.4);
+  }
+  65% {
+  background-color: #8a2be2; /* Electric Violet */
+  --shadow-color: rgba(138, 43, 226, 0.7);
+  --icon-color: #a153e6;
+  box-shadow: 0 0 44px 15px var(--shadow-color), 0 0 87px 31px rgba(138, 43, 226, 0.4);
+  }
+  70% {
+  background-color: #9400d3; /* Neon Dark Violet */
+  --shadow-color: rgba(148, 0, 211, 0.7);
+  --icon-color: #aa33e0;
+  box-shadow: 0 0 47px 16px var(--shadow-color), 0 0 91px 33px rgba(148, 0, 211, 0.4);
+  }
+  75% {
+  background-color: #ff00ff; /* Pure Neon Magenta / Fuchsia */
+  --shadow-color: rgba(255, 0, 255, 0.75);
+  --icon-color: #ff33ff;
+  box-shadow: 0 0 50px 18px var(--shadow-color), 0 0 95px 35px rgba(255, 0, 255, 0.45);
+  }
+  80% {
+  background-color: #ff1493; /* Neon Deep Pink */
+  --shadow-color: rgba(255, 20, 147, 0.75);
+  --icon-color: #ff47a3;
+  box-shadow: 0 0 47px 17px var(--shadow-color), 0 0 91px 33px rgba(255, 20, 147, 0.45);
+  }
+  85% {
+  background-color: #ff69b4; /* Neon Hot Pink */
+  --shadow-color: rgba(255, 105, 180, 0.75);
+  --icon-color: #ff85c2;
+  box-shadow: 0 0 44px 16px var(--shadow-color), 0 0 87px 31px rgba(255, 105, 180, 0.45);
+  }
+  90% {
+  background-color: #ff66cc; /* Bright Light Pink */
+  --shadow-color: rgba(255, 102, 204, 0.75);
+  --icon-color: #ff80d5;
+  box-shadow: 0 0 41px 15px var(--shadow-color), 0 0 83px 29px rgba(255, 102, 204, 0.45);
+  }
+  95% {
+  background-color: #ff3366; /* Bright Rose Pink */
+  --shadow-color: rgba(255, 51, 102, 0.75);
+  --icon-color: #ff5c85;
+  box-shadow: 0 0 38px 14px var(--shadow-color), 0 0 79px 27px rgba(255, 51, 102, 0.45);
+  }
+  }
