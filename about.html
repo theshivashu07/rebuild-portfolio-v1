@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Shivam Shukla — Python and Django developer building secure, scalable applications.">
+    <meta name="theme-color" content="#f3f5f3">
+
+    <title>SHivam Kumar SHukla | AI Engineer</title>
+    <link rel="icon" type="image/x-icon" href="images/happy-facess.png" />
+
+    <!-- bootstrap link and script -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- bootstrap and fontawesome icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amita:wght@400;700&family=Berkshire+Swash&family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Cinzel:wght@400..900&family=Dancing+Script:wght@400..700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Familjen+Grotesk:ital,wght@0,400..700;1,400..700&family=Geist:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Redaction+10:ital,wght@0,400;0,700;1,400&family=Redaction:ital,wght@0,400;0,700;1,400&family=Ruwudu:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Sabhi top Serif Fonts ka Single Combined Link -->
+    <!-- <link href="https://googleapis.com" rel="stylesheet" /> -->
+
+    <!-- tailwinds css -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://tailwindcss.com"></script>
+
+    <link href="styles/style.css" rel="stylesheet" />
+    <link href="styles/style-slim-scrollbar.css" rel="stylesheet" />
+    <link href="styles/style-auto-play-music.css" rel="stylesheet" />
+
+  </head>
+
+  <body>
+    <header class="site-header">
+
+      <a href="#" class="flex items-center group text-black brand">
+
+        ➺
+
+        <!-- Normal state -->
+        <span class="group-hover:hidden logo">
+          SHIVASHU
+        </span>
+
+        <!-- Hover state -->
+        <span class="hidden group-hover:inline-block">
+          ( SHivam Kumar SHukla, Gargvanshi )
+        </span>
+
+        <!-- Small dot -->
+        <span class="inline-block ml-1.5 w-1 h-1 rounded-full translate-y-1 group-hover:hidden"></span>
+
+      </a>
+
+      <nav class="header-links" aria-label="Main navigation">
+        <!-- <a class="lg:block" href="#about">About</a> -->
+        <!-- <a class="lg:block" href="#resume">Resume <i class="bi bi-download" aria-hidden="true"></i></a> -->
+        <!-- <span class="lg:block">...</span> -->
+
+        <!-- <a class="hidden [@media(min-width:580px)]:inline-block" href="#about">About</a> -->
+        <!-- <a class="hidden [@media(min-width:440px)]:inline-block" href="#resume">Resume <i class="bi bi-download" aria-hidden="true"></i></a> -->
+        <!-- <span class="hidden [@media(min-width:500px)]:inline-block">...</span> -->
+
+        <a class="hidden [@media(min-width:520px)]:inline-block" href="#about">About</a>
+        <a class="hidden [@media(min-width:410px)]:inline-block" href="#resume">Resume <i class="bi bi-download" aria-hidden="true"></i></a>
+        <span class="hidden [@media(min-width:450px)]:inline-block">...</span>
+
+
+  <!-- <div class="relative flex items-center justify-center   hidden [@media(min-width:450px)]:inline-block"> -->
+    <!-- <div class="max-[450px]:hidden flex relative items-center justify-center"> -->
+  <!-- <div class="max-[450px]:hidden flex relative items-center justify-center"> -->
+        <div class="relative flex items-center justify-center   hidden [@media(min-width:280px)]:inline-block">
+          <button id="music-box" onclick="toggleMusic()" class="relative w-20 h-10 rounded-full flex items-center justify-center bg-light text-[var(--accent)] transition-all duration-300 border-1 border-[var(--accent)] focus:outline-none">
+            <i class="bi bi-earbuds [var(--accent)]" style="height: 25px;"></i>
+
+            <div id="status-icon-container" class="absolute bottom-0 right-0 w-4 h-4 bg-light text-[var(--accent)] rounded-full flex items-center justify-center shadow-md transform translate-x-1 translate-y-1 border-1 border-[var(--accent)]">
+              <i id="status-icon" class="fas fa-play text-[6px]" style="width: 4px;"></i>
+            </div>
+          </button>
+          
+          <audio id="bg-audio" loop>
+            <source src="songs/girlfriend-jass-manak.mp3" type="audio/mpeg">
+          </audio>
+        </div>
+
+      </nav>
+    </header>
+
+    <main class="hero" id="top">
+      <p class="eyebrow px-4 text-sm sm:text-base md:text-lg">A Senior Full-Stack AI Engineer</p>
+
+      <h1 class="wave-heading pb-5" data-wave-heading data-text="jamming with code and AI">
+        <span class="wave-heading__visual" data-wave-visual aria-hidden="true"></span>
+        <span class="sr-only" data-wave-accessible></span>
+      </h1>
+
+      <section class="intro-grid py-5" id="about" aria-label="About Shivam">
+        <div class="intro-copy">
+          <p>Hi! I'm SHivam,</p>
+          <p>
+            <strong class="intro-highlight">A result driven development engineer and problem-solver</strong>
+            focused on building secure, scalable applications, and designing reliable backends plus AI products.
+          </p>
+          <p>
+            I enjoy architecting and building scalable applications, designing robust REST APIs, and engineering distributed systems
+            using Python, Django+DRF and React.js. My interests span microservices, system design, database optimization,
+            Redis, Kafka, Cache, WebSockets, secure authentication (OAuth2, SSO, and JWT), and cloud-native development with Docker, Kubernetes vie AWS and DigitalOcean.
+            I'm also exploring the possibilities of Generative AI, LLMs, RAG pipelines, vector databases, and AI agents
+            (bridging traditional software engineering with intelligent systems).
+          </p>
+          <p>
+            My journey in software development taught me to think beyond writing code and focus on
+            building scalable systems and products that work seamlessly for people
+            (from secure backend architectures to scalable, real-time digital experiences).
+          </p>
+
+          <div class="contact-row" id="contact">
+            <span class="contact-label">Connect with me</span>
+            <i class="bi bi-arrow-right contact-arrow text-sm" aria-hidden="true"></i>
+            <a class="contact-link" href="mailto:shivamshukla3108@gmail.com">shivamshukla3108@gmail.com</a>
+          </div>
+        </div>
+
+        <div class="portrait-wrap">
+          <div class="portrait-stage" data-spotlight role="slider" tabindex="0" aria-label="Move the clear focus area around the portrait" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+            <div class="portrait-fallback">
+              Loading the software engineer image…
+            </div>
+
+            <img class="portrait-image portrait-image--blur" src="https://exchange4media.gumlet.io/news-photo/154467-main7.jpg" alt="" aria-hidden="true" draggable="false">
+            <img class="portrait-image portrait-image--sharp" src="https://exchange4media.gumlet.io/news-photo/154467-main7.jpg" alt="Software engineer working at dual monitors in a modern office" draggable="false">
+            
+            <div class="spotlight-frame" aria-hidden="true">
+              <span class="spotlight-plus"></span>
+            </div>
+          </div>
+          <p class="portrait-hint">Drag to explore</p>
+        </div>
+      </section>
+
+      <!-- <div id="resume" aria-hidden="true"></div> -->
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script src="scripts/script.js"></script>
+    <script src="scripts/script-auto-play-music.js"></script>
+
+  </body>
+
+</html>
