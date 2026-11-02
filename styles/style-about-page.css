@@ -1,0 +1,530 @@
+:root {
+  --page-bg: #f3f5f3;
+  --surface: #edf0ed;
+  --ink: #080909;
+  --muted: #555e63;
+  --soft-muted: #7b8589;
+  --accent: #e06536;
+  --line: rgba(20, 28, 30, 0.11);
+  --footer-bg: #1f1f21;
+  --page-font: "Inter", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background: var(--page-bg);
+  color: var(--ink);
+  /* font-family: var(--page-font); */
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  color: inherit;
+}
+
+/* Minimal header placeholder. Replace this block with your existing header. */
+.placeholder-header {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 40px;
+  padding-inline: clamp(22px, 4.2vw, 64px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  background: rgba(250, 251, 250, 0.78);
+}
+
+.menu-dots {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 2px;
+}
+
+.menu-dots span {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: #242729;
+}
+
+/*
+      Two-column About layout.
+      The portrait is sticky only inside .about-shell. Because the footer is
+      outside .about-shell, the portrait naturally stops when the footer arrives.
+    */
+.about-shell {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+  align-items: stretch;
+  width: 100%;
+  min-width: 0;
+}
+
+.about-photo-column {
+  position: sticky;
+  top: 0;
+  align-self: start;
+  width: 100%;
+
+  /* Image height will follow its actual column width */
+  aspect-ratio: 0.87 / 1;
+  height: auto;
+  min-height: 0;
+
+  overflow: hidden;
+  background: transparent;
+}
+
+.about-photo {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+
+  object-fit: cover;
+  object-position: center 42%;
+  filter: grayscale(100%);
+}
+
+.about-content-column {
+  min-width: 0;
+  padding: clamp(58px, 8.3vw, 82px) clamp(26px, 4.2vw, 64px) 76px;
+}
+
+.about-content {
+  width: min(100%, 700px);
+  margin-inline: auto;
+}
+
+.section-kicker {
+  margin: 0 0 32px;
+  color: #69747a;
+  /* font-size: 9px; */
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 0.055em;
+}
+
+.about-name {
+  margin: 0;
+  /* color: var(--ink); */
+  color: var(--accent);
+  font-size: clamp(33px, 3.5vw, 48px);
+  font-weight: 750;
+  letter-spacing: -0.05em;
+  line-height: 1.02;
+
+  font-family: "Cinzel";
+}
+
+.about-tagline {
+  margin: 16px 0 19px;
+  color: #171b1d;
+  font-size: clamp(16px, 1.45vw, 20px);
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  line-height: 1.35;
+}
+
+.about-copy {
+  /* color: var(--muted); */
+  /* font-size: clamp(11.5px, 0.98vw, 13.5px); */
+  font-weight: 300;
+  line-height: 1.55;
+
+  color: #4b4b4b;
+  font-size: clamp(17px, 1.5vw, 18px);
+}
+
+.about-copy p {
+  margin: 0 0 18px;
+}
+
+.about-copy strong {
+  color: #1c2225;
+  font-weight: 500;
+}
+
+.values-block {
+  margin-top: 17px;
+}
+
+.values-title {
+  display: block;
+  margin-bottom: 3px;
+  color: #252b2e;
+  /* font-size: 11.5px; */
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.values-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.values-list li {
+  color: var(--muted);
+  /* font-size: 11.5px; */
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+.values-list li::before {
+  content: "→";
+  display: inline-block;
+  margin-right: 6px;
+  color: #626d72;
+}
+
+.content-section {
+  margin-top: 38px;
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
+}
+
+.content-section__title {
+  margin: 0 0 28px;
+  color: var(--ink);
+  /* font-size: 17px; */
+  font-size: 22px;
+  font-weight: 700;
+  /* letter-spacing: -0.045em; */
+  line-height: 1.2;
+}
+
+.skill-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px 34px;
+}
+
+.skill-group h3,
+.tool-group h3 {
+  margin: 0 0 16px;
+  color: #141819;
+  /* font-size: 13px; */
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: -0.035em;
+}
+
+.dot-list {
+  display: grid;
+  gap: 9px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.dot-list li {
+  position: relative;
+  padding-left: 13px;
+  color: #606b70;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.25;
+}
+
+.dot-list li::before {
+  position: absolute;
+  top: 0.48em;
+  left: 0;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--accent);
+  content: "";
+}
+
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.tool-group h3 {
+  margin-bottom: 17px;
+}
+
+.tool-group .dot-list {
+  gap: 9px;
+}
+
+.tool-group:nth-child(2) .dot-list li::before,
+.tool-group:nth-child(3) .dot-list li::before {
+  background: #7185ee;
+}
+
+/* Small social / portfolio card from the reference design. */
+.social-card-wrap {
+  margin-top: 30px;
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
+}
+
+.social-card {
+  display: flex;
+  align-items: center;
+  gap: clamp(18px, 4vw, 48px);
+  /* width: min(100%, 560px); */
+  width: 100%;
+  min-height: 108px;
+  padding: 14px 20px;
+  border: 1px solid rgba(30, 38, 38, 0.06);
+  border-radius: 8px;
+  /* background: #eef0ee; */
+  background-color: beige;
+  text-decoration: none;
+  transition:
+    border-color 180ms ease,
+    transform 180ms ease;
+}
+
+.social-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(224, 101, 54, 0.3);
+}
+
+.social-orb {
+  position: relative;
+  display: block;
+  flex: 0 0 76px;
+  width: 76px;
+  height: 76px;
+  border: 2px solid #6484d2;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 47% 42%,
+    #ffad22 0,
+    #f36b13 42%,
+    #e14c08 68%,
+    #ba3b12 78%,
+    #e9853e 100%
+  );
+  box-shadow:
+    inset 2px 2px 5px rgba(255, 220, 150, 0.7),
+    inset -3px -4px 7px rgba(120, 47, 25, 0.25),
+    0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.social-card__copy {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.social-card__title {
+  margin: 0 0 6px;
+  color: #101414;
+  font-size: 18px;
+  font-weight: 700;
+  /* letter-spacing: -0.035em; */
+  line-height: 1.3;
+  
+  font-family: 'Redaction';
+  text-transform: capitalize;
+}
+
+.social-card__handle {
+  margin: 0 0 7px;
+  color: black;
+  /* color: orangered; */
+  font-size: 15px;
+  font-weight: 400;
+
+  font-family: 'Cinzel';
+}
+
+.social-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #626d72;
+  font-size: 10px;
+  font-weight: 400;
+}
+
+.social-card__link i {
+  transition:
+    transform 180ms ease,
+    color 180ms ease;
+}
+
+.social-card:hover .social-card__link i {
+  transform: translateX(3px);
+  color: var(--accent);
+}
+
+/* Footer stays outside .about-shell, so it ends the sticky portrait area. */
+.site-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 166px;
+  padding: 28px 20px 20px;
+  background: var(--footer-bg);
+  color: #fff;
+  text-align: center;
+}
+
+.footer-title {
+  margin: 0 0 18px;
+  color: #fff;
+  font-size: clamp(24px, 3vw, 29px);
+  font-weight: 750;
+  letter-spacing: -0.055em;
+  line-height: 1.1;
+}
+
+.footer-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin: 0 0 17px;
+  color: #f0f1f0;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.footer-links a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 160ms ease;
+}
+
+.footer-links a:hover,
+.footer-links a:focus-visible {
+  color: var(--accent);
+}
+
+.footer-separator {
+  color: #85888a;
+}
+
+.footer-meta {
+  margin: 0;
+  color: #aeb1b2;
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 1.7;
+}
+
+/* Responsive layout */
+@media (max-width: 800px) {
+  .about-shell {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .about-photo-column {
+    position: relative;
+    top: auto;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    height: auto;
+    min-height: 0;
+  }
+
+  .about-photo {
+    object-position: center 20%;
+  }
+
+  .about-content-column {
+    padding: 46px clamp(22px, 6vw, 42px) 58px;
+  }
+
+  .about-content {
+    width: min(100%, 620px);
+  }
+
+  .about-name {
+    font-size: clamp(36px, 8vw, 48px);
+  }
+
+  .about-copy {
+    font-size: 13px;
+  }
+
+  .content-section {
+    margin-top: 34px;
+    padding-top: 25px;
+  }
+
+  .social-card {
+    width: 100%;
+  }
+}
+
+@media (max-width: 520px) {
+  .about-photo-column {
+    aspect-ratio: 4 / 5;
+  }
+
+  .placeholder-header {
+    height: 42px;
+    padding-inline: 20px;
+  }
+
+  .skill-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 25px;
+  }
+
+  .tools-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 25px;
+  }
+
+  .tool-group h3 {
+    margin-bottom: 13px;
+  }
+
+  .social-card {
+    gap: 18px;
+    padding: 13px 14px;
+  }
+
+  .social-orb {
+    flex-basis: 64px;
+    width: 64px;
+    height: 64px;
+  }
+
+  .footer-title {
+    font-size: 25px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+  }
+}
