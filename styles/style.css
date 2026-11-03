@@ -214,7 +214,8 @@ margin: 0 0 8px;
 padding: 7px 10px 9px;
 background: var(--accent);
 color: #fff;
-font-size: clamp(20px, 3vw, 32px);
+/* font-size: clamp(20px, 3vw, 32px); */
+font-size: clamp(10px, 3vw, 32px);
 font-weight: 400;
 line-height: 1.15;
 font-family: "Bricolage Grotesque", sans-serif;
@@ -226,10 +227,12 @@ margin: 0;
 color: var(--ink);
 font-family: "Bricolage Grotesque", sans-serif;
 /* font-size: clamp(3rem, 7vw, 6.6rem); */
-font-size: 6.6rem;
+font-size: clamp(3rem, 8vw, 6.6rem);
+/* font-size: 6.6rem; */
 font-weight: 800;
 line-height: 0.92;
 white-space: normal;
+white-space: nowrap; /* so that h1 text comes in only same line, not below ...*/
 }
 
 .wave-heading__visual {
@@ -298,7 +301,7 @@ font-weight: 600;
 display: flex;
 align-items: center;
 flex-wrap: wrap;
-gap: 13px;
+gap: 10px;
 margin-top: 35px;
 color: var(--ink);
 font-size: clamp(15px, 1.2vw, 18px);
@@ -311,7 +314,7 @@ white-space: nowrap;
 }
 
 .contact-arrow {
-font-size: 23px;
+font-size: 18px;
 line-height: 1;
 transition:
 transform 180ms ease,
@@ -493,7 +496,8 @@ padding-top: 105px;
 }
 
 .wave-heading {
-font-size: clamp(2.8rem, 12vw, 5rem);
+/* font-size: clamp(2.8rem, 12vw, 5rem); */
+font-size: clamp(2.5rem, 8vw, 5rem);
 letter-spacing: -0.055em;
 }
 
@@ -513,7 +517,11 @@ margin-inline: auto;
 }
 
 .contact-row {
-margin-top: 27px;
+/* margin-top: 27px; */
+margin-top: 50px;
+place-self: center;
+justify-content: center;
+flex-direction: column;
 }
 }
 
@@ -526,6 +534,12 @@ font-size: 9px;
 .brand:focus-visible > span:nth-of-type(2) {
 max-width: calc(100vw - 190px);
 }
+
+
+    .wave-heading {
+        font-size: clamp(1.5rem, 7vw, 5rem);
+        letter-spacing: -0.055em;
+    }
 }
 
 /* -------------------- Reduced Motion -------------------- */
@@ -547,10 +561,6 @@ font-variation-settings:
 "slnt" 0 !important;
 }
 }
-
-
-
-
 
 
 
