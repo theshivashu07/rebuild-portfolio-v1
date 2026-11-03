@@ -55,6 +55,9 @@
         <span class="inline-block ml-1.5 w-1 h-1 rounded-full translate-y-1 group-hover:hidden"></span>
     </a>
 
+    
+
+    
     <nav class="header-links" aria-label="Main navigation">
 
         <!-- Desktop navigation -->
@@ -67,6 +70,34 @@
         </a>
 
         <span class="desktop-nav-item">...</span>
+
+        <!-- Mobile menu button: music ke just left -->
+        <button
+        type="button"
+        class="mobile-nav-toggle     w-20 h-10 rounded-full  border"
+        id="mobile-nav-toggle"
+        aria-label="Open main menu"
+        aria-controls="mobile-nav-panel"
+        aria-expanded="false"
+        >
+        <!-- class="mobile-nav-toggle     w-20 h-10 rounded-full  border" -->
+        <!-- class="mobile-nav-toggle     w-20 h-10 rounded-full  text-[var(--accent)] border-1 border-[var(--accent)] bg-light" -->
+            <svg
+                class="mobile-nav-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+            >
+                <path
+                    d="M4 6h16M4 12h16M4 18h16"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                ></path>
+            </svg>
+            <span class="mobile-nav-sr-only">Open main menu</span>
+        </button>
 
         <!-- Music control: unchanged -->
         <div class="relative flex items-center justify-center hidden [@media(min-width:280px)]:inline-block">
@@ -91,35 +122,8 @@
             </audio>
         </div>
 
-
-        <!-- Mobile menu button: music ke just left -->
-        <button
-            type="button"
-            class="mobile-nav-toggle"
-            id="mobile-nav-toggle"
-            aria-label="Open main menu"
-            aria-controls="mobile-nav-panel"
-            aria-expanded="false"
-        >
-            <svg
-                class="mobile-nav-icon"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                xmlns="http://www.w3.org/2000/svg"
-                aria-hidden="true"
-            >
-                <path
-                    d="M4 6h16M4 12h16M4 18h16"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                ></path>
-            </svg>
-            <span class="mobile-nav-sr-only">Open main menu</span>
-        </button>
-
-
     </nav>
+
 
     <!-- Mobile dropdown: header ke andar, flow se bahar -->
     <div
@@ -130,8 +134,14 @@
     >
         <div class="mobile-nav-panel__inner">
 
+            <a class="mobile-nav-link" href="/">
+                Home
+                <i class="bi bi-house-door" aria-hidden="true"></i>
+            </a>
+
             <a class="mobile-nav-link" href="about.html">
                 About
+                <i class="bi bi-person-vcard" aria-hidden="true"></i>
             </a>
 
             <a class="mobile-nav-link" href="#resume">

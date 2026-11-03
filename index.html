@@ -74,13 +74,15 @@
 
         <!-- Mobile menu button: music ke just left -->
         <button
-            type="button"
-            class="mobile-nav-toggle"
-            id="mobile-nav-toggle"
-            aria-label="Open main menu"
-            aria-controls="mobile-nav-panel"
-            aria-expanded="false"
+        type="button"
+        class="mobile-nav-toggle     w-20 h-10 rounded-full  border"
+        id="mobile-nav-toggle"
+        aria-label="Open main menu"
+        aria-controls="mobile-nav-panel"
+        aria-expanded="false"
         >
+        <!-- class="mobile-nav-toggle     w-20 h-10 rounded-full  border" -->
+        <!-- class="mobile-nav-toggle     w-20 h-10 rounded-full  text-[var(--accent)] border-1 border-[var(--accent)] bg-light" -->
             <svg
                 class="mobile-nav-icon"
                 viewBox="0 0 24 24"
@@ -130,14 +132,17 @@
         aria-hidden="true"
         inert
     >
+    
         <div class="mobile-nav-panel__inner">
 
             <a class="mobile-nav-link" href="/">
                 Home
+                <i class="bi bi-house-door" aria-hidden="true"></i>
             </a>
 
             <a class="mobile-nav-link" href="about.html">
                 About
+                <i class="bi bi-person-vcard" aria-hidden="true"></i>
             </a>
 
             <a class="mobile-nav-link" href="#resume">
@@ -146,6 +151,7 @@
             </a>
 
         </div>
+
     </div>
 
 </header>
