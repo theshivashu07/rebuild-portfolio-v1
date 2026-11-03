@@ -7,7 +7,7 @@
 
     if (!header || !toggle || !panel) return;
 
-    const mobileScreen = window.matchMedia("(max-width: 639px)");
+    const mobileScreen = window.matchMedia("(max-width: 700px)");
     const hoverDevice = window.matchMedia(
         "(hover: hover) and (pointer: fine)"
     );

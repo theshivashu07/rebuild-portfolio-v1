@@ -18,8 +18,8 @@ json
 }
 ```
 
-But yad rahe ki aap es tarah se localhost pe chalayenge t vo work nahi karega.
-To locally chalane ke liye to aapko about.html hi use karna hai, /about/ nahi, okay?!!!!
+But yaad rahe ki aap es tarah se localhost pe chalayenge to vo /about/ access karne se locally work nahi karega, 
+locally chalane ke liye to aapko about.html hi use karna hai, /about/ kevel production only vercel ke liye hoga, okay?!!!!
 
 
 ### Fix: Apne CSS Link ke aage / lagayein
