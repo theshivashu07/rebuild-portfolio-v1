@@ -37,72 +37,122 @@
     <link href="styles/style-slim-scrollbar.css" rel="stylesheet" />
     <link href="styles/style-auto-play-music.css" rel="stylesheet" />
     <link href="styles/style-scroll-top-to-bottom.css" rel="stylesheet" />
+    <link href="styles/style-header-options-reshuffle.css" rel="stylesheet" />
 
   </head>
 
   <body>
     <header class="site-header">
 
-      <!-- <a href="#" class="flex items-center group text-black brand"> -->
-      <a href="index.html" class="flex items-center group text-black brand">
-
+    <!-- Brand: unchanged -->
+    <a href="#" class="flex items-center group text-black brand">
         ➺
 
-        <!-- Normal state -->
         <span class="group-hover:hidden logo">
-          SHIVASHU
+            SHIVASHU
         </span>
 
-        <!-- Hover state -->
         <span class="hidden group-hover:inline-block">
-          ( SHivam Kumar SHukla, Gargvanshi )
+            ( SHivam Kumar SHukla, Gargvanshi )
         </span>
 
-        <!-- Small dot -->
         <span class="inline-block ml-1.5 w-1 h-1 rounded-full translate-y-1 group-hover:hidden"></span>
+    </a>
 
-      </a>
+    <nav class="header-links" aria-label="Main navigation">
 
-      <nav class="header-links" aria-label="Main navigation">
-        <!-- <a class="lg:block" href="#about">About</a> -->
-        <!-- <a class="lg:block" href="#resume">Resume <i class="bi bi-download" aria-hidden="true"></i></a> -->
-        <!-- <span class="lg:block">...</span> -->
+        <!-- Desktop navigation -->
+        <a class="desktop-nav-item" href="/">Home</a>
 
-        <!-- <a class="hidden [@media(min-width:580px)]:inline-block" href="#about">About</a> -->
-        <!-- <a class="hidden [@media(min-width:440px)]:inline-block" href="#resume">Resume <i class="bi bi-download" aria-hidden="true"></i></a> -->
-        <!-- <span class="hidden [@media(min-width:500px)]:inline-block">...</span> -->
+        <a class="desktop-nav-item" href="about.html">About</a>
 
-        <!-- <a class="hidden [@media(min-width:520px)]:inline-block" href="#about">About</a> -->
-        <!-- <a class="hidden [@media(min-width:410px)]:inline-block" href="#resume">Resume <i class="bi bi-download" aria-hidden="true"></i></a> -->
+        <a class="desktop-nav-item" href="#resume">
+            Resume <i class="bi bi-download" aria-hidden="true"></i>
+        </a>
 
-        <a class="hidden [@media(min-width:520px)]:inline-block" href="about.html">About</a>
-        <a class="hidden [@media(min-width:410px)]:inline-block" href="#resume">Resume <i class="bi bi-download" aria-hidden="true"></i></a>
-        <span class="hidden [@media(min-width:450px)]:inline-block">...</span>
+        <span class="desktop-nav-item">...</span>
 
+        <!-- Mobile menu button: music ke just left -->
+        <button
+            type="button"
+            class="mobile-nav-toggle"
+            id="mobile-nav-toggle"
+            aria-label="Open main menu"
+            aria-controls="mobile-nav-panel"
+            aria-expanded="false"
+        >
+            <svg
+                class="mobile-nav-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+            >
+                <path
+                    d="M4 6h16M4 12h16M4 18h16"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                ></path>
+            </svg>
+            <span class="mobile-nav-sr-only">Open main menu</span>
+        </button>
 
-  <!-- <div class="relative flex items-center justify-center   hidden [@media(min-width:450px)]:inline-block"> -->
-    <!-- <div class="max-[450px]:hidden flex relative items-center justify-center"> -->
-  <!-- <div class="max-[450px]:hidden flex relative items-center justify-center"> -->
-        <div class="relative flex items-center justify-center   hidden [@media(min-width:280px)]:inline-block">
-          <button id="music-box" onclick="toggleMusic()" class="relative w-20 h-10 rounded-full flex items-center justify-center bg-light text-[var(--accent)] transition-all duration-300 border-1 border-[var(--accent)] focus:outline-none">
-            <i class="bi bi-earbuds [var(--accent)]" style="height: 25px;"></i>
+        <!-- Music control: unchanged -->
+        <div class="relative flex items-center justify-center hidden [@media(min-width:280px)]:inline-block">
 
-            <div id="status-icon-container" class="absolute bottom-0 right-0 w-4 h-4 bg-light text-[var(--accent)] rounded-full flex items-center justify-center shadow-md transform translate-x-1 translate-y-1 border-1 border-[var(--accent)]">
-              <i id="status-icon" class="fas fa-play text-[6px]" style="width: 4px;"></i>
-            </div>
-          </button>
-          
-          <audio id="bg-audio" loop>
-            <source src="songs/girlfriend-jass-manak.mp3" type="audio/mpeg">
-          </audio>
+            <button
+                id="music-box"
+                onclick="toggleMusic()"
+                class="relative w-20 h-10 rounded-full flex items-center justify-center bg-light text-[var(--accent)] transition-all duration-300 border-1 border-[var(--accent)] focus:outline-none"
+            >
+                <i class="bi bi-earbuds [var(--accent)]" style="height: 25px;"></i>
+
+                <div
+                    id="status-icon-container"
+                    class="absolute bottom-0 right-0 w-4 h-4 bg-light text-[var(--accent)] rounded-full flex items-center justify-center shadow-md transform translate-x-1 translate-y-1 border-1 border-[var(--accent)]"
+                >
+                    <i id="status-icon" class="fas fa-play text-[6px]" style="width: 4px;"></i>
+                </div>
+            </button>
+
+            <audio id="bg-audio" loop>
+                <source src="songs/girlfriend-jass-manak.mp3" type="audio/mpeg">
+            </audio>
         </div>
 
-      </nav>
-    </header>
+    </nav>
+
+    <!-- Mobile dropdown: header ke andar, flow se bahar -->
+    <div
+        class="mobile-nav-panel"
+        id="mobile-nav-panel"
+        aria-hidden="true"
+        inert
+    >
+        <div class="mobile-nav-panel__inner">
+
+            <a class="mobile-nav-link" href="/">
+                Home
+            </a>
+
+            <a class="mobile-nav-link" href="about.html">
+                About
+            </a>
+
+            <a class="mobile-nav-link" href="#resume">
+                Resume
+                <i class="bi bi-download" aria-hidden="true"></i>
+            </a>
+
+        </div>
+    </div>
+
+</header>
 
     <main class="hero" id="top">
       <!-- <p class="eyebrow px-4    max-[450px]:text-[15px] max-[450px]:p-[4px]">A Senior Full-Stack AI Engineer</p> -->
-      <p class="eyebrow px-4    ">A Senior Full-Stack AI Engineer</p>
+      <p class="eyebrow    ">A Senior Full-Stack AI Engineer</p>
 
       <!-- <h1 class="wave-heading pb-5      max-[450px]:text-[32px]" data-wave-heading data-text="jamming with code and AI"> -->
       <h1 class="wave-heading pb-5      " data-wave-heading data-text="jamming with code and AI">
@@ -137,7 +187,7 @@
               Connect with me
               <!-- <i class="bi bi-arrow-right ms-2 contact-arrow text-sm      hidden [@media(min-width:406px)]:block"></i>   -->
               <!-- <i class="bi bi-arrow-down ms-2 contact-arrow text-sm      block [@media(min-width:406px)]:hidden"></i>   -->
-              <i class="bi bi-arrow-right ms-2 mt-1 contact-arrow      hidden [@media(min-width:760px)]:block"></i>  
+              <i class="bi bi-arrow-right ms-2 contact-arrow      hidden [@media(min-width:760px)]:block"></i>  
               <i class="bi bi-arrow-down ms-2 contact-arrow      block [@media(min-width:760px)]:hidden"></i>  
             </span>
             <a class="contact-link" href="mailto:shivamshukla3108@gmail.com">shivamshukla3108@gmail.com</a>
@@ -177,6 +227,7 @@
     
     <script src="scripts/script.js"></script>
     <script src="scripts/script-auto-play-music.js"></script>
+    <script src="scripts/script-header-options-reshuffle.js"></script>
 
   </body>
 
